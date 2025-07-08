@@ -1,4 +1,21 @@
-:root{
+/* :root{
   min-height: 100vh;
     background: linear-gradient(135deg, #eeb8fd, #cffcfe);
+} */
+
+
+
+/* index.css */
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #eeb8fd, #cffcfe);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #2c2c2c;
+}
+
+* {
+  box-sizing: border-box;
 }
