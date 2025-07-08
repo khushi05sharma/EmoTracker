@@ -1,0 +1,81 @@
+.todayNoteCard{
+    width: 400px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.heading{
+    font-size: 1rem;
+    font-weight: 700;
+    color: rgb(233, 103, 136);
+    text-align: center;
+    margin-top: 2px;
+}
+
+.noteDate{
+    font-size: 0.9rem;
+    font-weight: 600;
+   
+}
+
+.noteEmotion{
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-top: 2px;
+}
+
+.noteText{
+    font-size: 0.8rem;
+    font-weight: 500;
+    margin-top: 4px;
+}
+
+.noData{
+    font-size: 1rem;
+    font-weight: 600;
+    color: rgb(21, 20, 20);
+    text-align: center;
+    
+}
+
+
+@media (max-width: 768px) {
+    .todayNoteCard {
+       
+        padding: 15px; /* Reduce padding */
+    }
+
+    .heading {
+        font-size: 0.9rem; /* Adjust heading font size */
+    }
+
+    .noteDate,
+    .noteEmotion,
+    .noteText,
+    .noData {
+        font-size: 0.7rem; /* Adjust other font sizes */
+    }
+}
+
+@media (max-width: 480px) {
+    .todayNoteCard {
+     
+        padding: 10px; /* Further reduce padding */
+    }
+
+    .heading {
+        font-size: 0.8rem;
+    }
+
+    .noteDate,
+    .noteEmotion,
+    .noteText,
+    .noData {
+        font-size: 0.6rem;
+    }
+}

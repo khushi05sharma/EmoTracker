@@ -1,0 +1,10 @@
+.date-input{
+  border: 1px solid grey;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgb(149, 146, 146);
+  padding: 4px 8px;
+  font-size: large;
+  font-weight: 500;
+}
+
+
