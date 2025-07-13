@@ -1,12 +1,64 @@
-# React + Vite
+<h1 align="center">🌸 EmoTracker</h1>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<p align="center">
+  A visually soothing, emotion-based journaling app built with <strong>React</strong> and <strong>Vite</strong>.  
+  Designed to help you reflect on your moods, track emotional patterns, and embrace your feelings — one note at a time.
+</p>
 
-Currently, two official plugins are available:
+<p align="center">
+  <a href="https://khushi05sharma.github.io/EmoTracker" target="_blank"><strong>🔗 Live Demo</strong></a> •
+  <a href="https://github.com/khushi05sharma/EmoTracker/issues">🐞 Report Bug</a> •
+  <a href="#-features">💡 Features</a>
+</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🧠 About the Project
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**EmoTracker** is a modern and minimalist mood diary that allows users to:
+- 📝 Record a quick mood note
+- 😊 Choose from a set of emotion options (with emoji support!)
+- 📆 Navigate to a **Past Notes** section to reflect on their emotional history
+- 🎨 Enjoy a light and pastel-themed interface for a calm journaling experience
+
+---
+
+## ✨ Features
+
+- ✅ **Daily Mood Logging** with emotion & note
+- ✅ **Emoji-based Emotion Picker**
+- ✅ **Past Notes Calendar View**
+- ✅ **Responsive Layout** (mobile + desktop)
+- ✅ **Deployed on GitHub Pages** using `gh-pages`
+- ✅ **Smooth Hash-Based Routing** for live compatibility
+
+---
+
+## 🛠 Tech Stack
+
+| Tech             | Role                              |
+|------------------|-----------------------------------|
+| **React**        | Frontend framework (hooks, JSX)   |
+| **Vite**         | Fast bundler & dev server         |
+| **CSS**          | Custom styling                    |
+| **React Router** | Client-side routing               |
+| **GitHub Pages** | Deployment                        |
+
+---
+
+## 📸 Screenshots
+
+> Upload your screenshots to `/assets/` folder and reference them here:
+
+```md
+<p align="center">
+  <img src="assets/homepage-preview.png" alt="Homepage" width="80%" />
+  <br/>
+  <em>🌼 Homepage – Log today’s emotion</em>
+</p>
+
+<p align="center">
+  <img src="assets/past-notes-preview.png" alt="Past Notes Page" width="80%" />
+  <br/>
+  <em>🗂 Past Notes – Review emotional entries by date</em>
+</p>
