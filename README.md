@@ -39,7 +39,7 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 ## 🚀 Live Demo
 
 🔗 **Try it now:**  
-👉 [https://khushi05sharma.github.io/EmoTracker/](https://khushi05sharma.github.io/EmoTracker/)
+👉 [https://khushi05sharma.github.io/EmoTracker/]
 
 ---
 
@@ -74,7 +74,7 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 ## 🙋‍♀️ About Me
 Khushi Sharma
 Frontend Developer 💻 | UI/UX Enthusiast 🎨 | Aesthetic Thinker ✨
-🔗 GitHub
+🔗 GitHub [https://github.com/khushi05sharma]
 
 ---
 
