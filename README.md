@@ -71,10 +71,9 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 ---
 
 ## 🙋‍♀️ About Me
-Khushi Sharma
+**Khushi Sharma**
 Frontend Developer 💻 | UI/UX Enthusiast 🎨 | Aesthetic Thinker ✨ |
-🔗 GitHub [https://github.com/khushi05sharma]
-(https://github.com/khushi05sharma)
+🔗 [GitHub](https://github.com/khushi05sharma)  
 
 ---
 
