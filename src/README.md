@@ -1,11 +1,11 @@
-<h1 align="center">🌸 EmoTracker</h1>
+<h1>🌸 EmoTracker</h1>
 
-<p align="center">
+<p>
   A visually soothing, emotion-based journaling app built with <strong>React</strong> and <strong>Vite</strong>.  
   Designed to help you reflect on your moods, track emotional patterns, and embrace your feelings — one note at a time.
 </p>
 
-<p align="center">
+<p>
   <a href="https://khushi05sharma.github.io/EmoTracker" target="_blank"><strong>🔗 Live Demo</strong></a> •
   <a href="https://github.com/khushi05sharma/EmoTracker/issues">🐞 Report Bug</a> •
   <a href="#-features">💡 Features</a>
@@ -52,13 +52,13 @@ Whether you're tracking mental wellness or building a self-care habit, EmoTracke
 
 > Upload screenshots to your repo under `/assets/` or paste here. For now, use this structure:
 
-<p align="center">
+<p >
   <img src="assets/homepage-preview.png" alt="Homepage" width="80%" />
   <br/>
   <em>🌼 Homepage – Log today’s emotion</em>
 </p>
 
-<p align="center">
+<p>
   <img src="assets/past-notes-preview.png" alt="Past Notes Page" width="80%" />
   <br/>
   <em>🗂 Past Notes – Review emotional entries by date</em>
