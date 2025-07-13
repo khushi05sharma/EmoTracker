@@ -40,6 +40,7 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 
 🔗 **Try it now:**  
 👉 [https://khushi05sharma.github.io/EmoTracker/]
+(https://khushi05sharma.github.io/EmoTracker/)
 
 ---
 
@@ -57,8 +58,6 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 
 ## 📸 Screenshots
 
-> Add your screenshots inside a `/screenshots` folder and use the following image links once available.
-
 ### 🌼 Home Page
 <p align="center">
   <img src="./screenshots/mainpage.jpeg" alt="Home Page" width="80%">
@@ -73,8 +72,9 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 
 ## 🙋‍♀️ About Me
 Khushi Sharma
-Frontend Developer 💻 | UI/UX Enthusiast 🎨 | Aesthetic Thinker ✨
+Frontend Developer 💻 | UI/UX Enthusiast 🎨 | Aesthetic Thinker ✨ |
 🔗 GitHub [https://github.com/khushi05sharma]
+(https://github.com/khushi05sharma)
 
 ---
 
