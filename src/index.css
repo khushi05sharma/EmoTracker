@@ -1,12 +1,3 @@
-/* :root{
-  min-height: 100vh;
-    background: linear-gradient(135deg, #eeb8fd, #cffcfe);
-} */
-
-
-
-/* index.css */
-
 body {
   min-height: 100vh;
   margin: 0;
@@ -14,8 +5,25 @@ body {
   background: linear-gradient(135deg, #eeb8fd, #cffcfe);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #2c2c2c;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 * {
   box-sizing: border-box;
+}
+
+/* Ensure main content area is responsive */
+main {
+  width: 100%;
+  padding: 0 1rem;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 14px; /* Slightly smaller base font on mobile */
+  }
+  
+  main {
+    padding: 0 0.5rem;
+  }
 }

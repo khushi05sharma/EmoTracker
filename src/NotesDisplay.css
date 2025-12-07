@@ -4,9 +4,9 @@
     justify-content: center; 
     gap: 20px;
     margin-top: 20px;
-  }
-  
-  .note-card {
+}
+
+.note-card {
     background: whitesmoke;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -15,37 +15,71 @@
     width: 250px;
     text-align: center;
     font-family: "Arial", sans-serif;
-    transition: transform 0.3s ease;
-  }
-  
-  .note-card:hover {
-    transform: scale(1.05); 
-  }
-  
-  .note-card h3 {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.note-card:hover {
+    transform: scale(1.08); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+.note-card h3 {
     font-size: 18px;
     font-weight: bold;
     color: rgb(65, 51, 81);
     margin-bottom: 10px;
-  }
-  
-  .note-card h4 {
+}
+
+.note-card h4 {
     font-size: 2rem;
     margin: 10px 0;
     font-weight: normal;
     color: black;
     margin-bottom: 8px;
-  }
-  
-  .note-card p {
+}
+
+.note-card p {
     font-size: 14px;
     color: #434343;
-  }
-  
-  .no-notes {
+    line-height: 1.5;
+}
+
+.no-notes {
     font-size: 1.8rem;
     color: #cc2e2e;
     text-align: center;
     margin-top: 20px;
-  }
-  
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .note-card {
+        width: 200px;
+        padding: 15px;
+    }
+    
+    .note-card h3 {
+        font-size: 16px;
+    }
+    
+    .note-card h4 {
+        font-size: 1.5rem;
+    }
+    
+    .note-card p {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notes-display-container {
+        gap: 15px;
+    }
+    
+    .note-card {
+        width: 90%;
+        max-width: 300px;
+    }
+}

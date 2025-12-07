@@ -11,18 +11,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-
 textarea{
-    width: 23rem;
-    padding-right: 4px;
-    padding-left: 4px;
-    padding-top: 4px; 
+    width: 100%; /* Changed from fixed 23rem to 100% */
+    padding: 8px;
     border: 1px solid rgb(153, 32, 197);
     border-radius: 10px;
     font-size: 1rem;
     font-family: Arial, sans-serif;
     resize: none;
     height: 80px;
+    box-sizing: border-box; /* Ensures padding is included in width */
 }
 
 textarea::placeholder{
@@ -30,12 +28,13 @@ textarea::placeholder{
 }
 
 select{
-    width: 10rem;
-    padding-inline: 4px;
-    padding-block: 6px;
+    width: 100%; /* Changed from fixed 10rem to 100% */
+    padding: 8px;
     border: 1px solid rgb(153, 32, 197);
     border-radius: 8px;
-    font-weight:500;
+    font-weight: 500;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
 
 textarea:focus,
@@ -46,7 +45,8 @@ select:focus {
 }
 
 .saveBtn{
-    width: 6rem;
+    width: 100%;
+    max-width: 150px; /* Limit maximum width */
     background-color: rgb(224, 107, 136);
     color: white;
     font-size: 1.2rem;
@@ -63,17 +63,39 @@ select:focus {
     transform: scale(1.05);
 }
 
-
 @media (max-width: 768px) {
     .moodForm {
         gap: 0.75rem; 
-        padding: 0.75rem; 
+        padding: 1rem;
+        max-width: 90%; /* Allow more width on tablets */
     }
 
     textarea,
     select {
-        font-size: 0.9rem; 
-        padding: 0.5rem; 
+        font-size: 0.95rem; 
+        padding: 8px; 
+    }
+
+    .saveBtn {
+        font-size: 1.1rem; 
+        padding: 0.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .moodForm {
+        max-width: 95%; 
+        gap: 0.6rem;
+        padding: 0.75rem;
+    }
+
+    textarea {
+        font-size: 0.9rem;
+        height: 70px; /* Slightly reduce height on mobile */
+    }
+    
+    select {
+        font-size: 0.9rem;
     }
 
     .saveBtn {
@@ -81,22 +103,3 @@ select:focus {
         padding: 0.5rem;
     }
 }
-
-@media (max-width: 480px) {
-    .moodForm {
-        width: 95%; 
-        gap: 0.5rem; 
-    }
-
-    textarea,
-    select {
-        font-size: 0.8rem; 
-    }
-
-    .saveBtn {
-        font-size: 0.9rem; 
-        padding: 0.5rem;
-    }
-}
-
-

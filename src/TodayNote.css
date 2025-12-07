@@ -1,5 +1,6 @@
 .todayNoteCard{
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     background-color: white;
     display: flex;
     flex-direction: column;
@@ -15,6 +16,7 @@
     color: rgb(233, 103, 136);
     text-align: center;
     margin-top: 2px;
+    word-wrap: break-word;
 }
 
 .noteDate{

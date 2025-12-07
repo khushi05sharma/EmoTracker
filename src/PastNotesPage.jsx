@@ -6,6 +6,7 @@ import "./PastNotesPage.css";
 
 export default function PastNotesPage({ notes }) {
   const [selectedDate, setSelectedDate] = useState("");
+  const [hoveredMood, setHoveredMood] = useState(null);
 
   // Filter notes based on the selected date
   const filteredNotes = selectedDate
@@ -13,9 +14,12 @@ export default function PastNotesPage({ notes }) {
     : notes;
 
   return (
-    <div className="box">
+    <div className={`box ${hoveredMood ? `mood-${hoveredMood}` : ''}`}>
       <DateInput selectedDate={selectedDate} onDateChange={setSelectedDate} />
-      <NotesDisplay notes={filteredNotes} />
+      <NotesDisplay 
+        notes={filteredNotes} 
+        onMoodHover={setHoveredMood}
+      />
     </div>
   );
 }
