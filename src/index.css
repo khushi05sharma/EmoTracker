@@ -11,7 +11,7 @@ body {
 
 /* Dark mode styling */
 body.dark-mode {
-  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  background: linear-gradient(135deg, #27273d, #16213e);
   color: #e0e0e0;
 }
 
@@ -47,6 +47,18 @@ body.dark-mode .pastBtn {
   background: #2c2c2c;
   color: #e0e0e0;
   border-color: #666;
+}
+
+body.dark-mode .note-card p{
+  color: rgb(216, 215, 215);
+}
+
+body.dark-mode .note-card h4{
+  color: white;
+}
+
+body.dark-mode .note-card h3{
+  color:cornflowerblue;
 }
 
 body.dark-mode .saveBtn {

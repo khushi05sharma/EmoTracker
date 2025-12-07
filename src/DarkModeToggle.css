@@ -1,28 +1,28 @@
 .dark-mode-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: 2px solid rgba(150, 112, 215, 0.5);
-    background: white;
-    font-size: 28px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid rgba(150, 112, 215, 0.5);
+  background: white;
+  font-size: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .dark-mode-toggle:hover {
-    transform: scale(1.1) rotate(15deg);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1) rotate(15deg);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 body.dark-mode .dark-mode-toggle {
-    background: #2c2c2c;
-    border-color: rgba(255, 255, 255, 0.3);
+  background: #2c2c2cf5;
+  border-color: rgba(255, 255, 255, 0.3);
 }
