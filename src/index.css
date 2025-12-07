@@ -6,6 +6,55 @@ body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #2c2c2c;
   overflow-x: hidden; /* Prevent horizontal scroll */
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark mode styling */
+body.dark-mode {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e0e0e0;
+}
+
+body.dark-mode .moodHead,
+body.dark-mode .past-notes-header h1 {
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode .moodForm {
+  background: #2c2c2c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode textarea,
+body.dark-mode select {
+  background: #1a1a1a;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .todayNoteCard {
+  background: #2c2c2c;
+  color: #e0e0e0;
+}
+
+body.dark-mode .note-card {
+  background: #2c2c2c;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode .pastBtn {
+  background: #2c2c2c;
+  color: #e0e0e0;
+  border-color: #666;
+}
+
+body.dark-mode .saveBtn {
+  background: #9c27b0;
+}
+
+body.dark-mode .saveBtn:hover {
+  background: #7b1fa2;
 }
 
 * {

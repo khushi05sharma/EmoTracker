@@ -2,10 +2,40 @@
 .page-wrapper {
     min-height: 100vh;
     width: 100%;
-      transition: background 4s ease-in-out; /* Ultra slow, smooth transition with custom easing */
-    background: linear-gradient(135deg, #eeb8fd, #cffcfe);
+    transition: all 8s cubic-bezier(0.4, 0, 0.2, 1); /* Ultra slow, smooth transition with custom easing */
+    background: linear-gradient(135deg, #eeb8fd, #cffcfe); /* Default background */
     display: flex;
     flex-direction: column;
+}
+
+/* Dark mode default background */
+body.dark-mode .page-wrapper {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+/* Dark mode mood backgrounds - darker versions */
+body.dark-mode .page-wrapper.mood-happy {
+    background: linear-gradient(135deg, #4a4a00, #6b6b00, #8b8b00) !important;
+}
+
+body.dark-mode .page-wrapper.mood-sad {
+    background: linear-gradient(135deg, #1a3a5a, #2a4a6a, #3a5a7a) !important;
+}
+
+body.dark-mode .page-wrapper.mood-excited {
+    background: linear-gradient(135deg, #5a2a1a, #6a3a2a, #7a4a3a) !important;
+}
+
+body.dark-mode .page-wrapper.mood-bored {
+    background: linear-gradient(135deg, #2a2a2a, #3a3a3a, #4a4a4a) !important;
+}
+
+body.dark-mode .page-wrapper.mood-confused {
+    background: linear-gradient(135deg, #3a2a4a, #4a3a5a, #5a4a6a) !important;
+}
+
+body.dark-mode .page-wrapper.mood-other {
+    background: linear-gradient(135deg, #2a4a2a, #3a5a3a, #4a6a4a) !important;
 }
 
 /* Header styling */

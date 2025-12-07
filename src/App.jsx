@@ -2,8 +2,8 @@ import { HashRouter, Routes, Route } from 'react-router-dom';
 import { useState, useEffect } from 'react'; 
 import Header from './Header'; 
 import MoodDiaryPage from './MoodDiaryPage'; 
-import PastNotesPage from './PastNotesPage'; 
-// REMOVED: import PastHead from './PastHead'; (not needed anymore!)
+import PastNotesPage from './PastNotesPage';
+import DarkModeToggle from './DarkModeToggle';
 
 function App() {
   // Load notes from localStorage on initial render
@@ -25,6 +25,12 @@ function App() {
       console.error('❌ Error loading notes from localStorage:', error);
       return [];
     }
+  });
+
+  // Dark mode state - load from localStorage
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedMode = localStorage.getItem('darkMode');
+    return savedMode === 'true';
   });
 
   // Save notes to localStorage whenever they change
@@ -52,10 +58,36 @@ function App() {
     });
   };
 
+  // Function to delete a note
+  const deleteNote = (index) => {
+    console.log('🗑️ Deleting note at index:', index);
+    setNotes((prevNotes) => {
+      const updated = prevNotes.filter((_, i) => i !== index);
+      console.log('📝 Updated notes array after deletion:', updated);
+      return updated;
+    });
+  };
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(prev => !prev);
+  };
+
+  // Apply dark mode class to body
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark-mode');
+    } else {
+      document.body.classList.remove('dark-mode');
+    }
+    localStorage.setItem('darkMode', isDarkMode);
+  }, [isDarkMode]);
+
   console.log('🎨 Rendering App with notes:', notes);
 
   return (
     <HashRouter>
+      <DarkModeToggle isDarkMode={isDarkMode} onToggle={toggleDarkMode} />
       <Routes>
         {/* Front Page */}
         <Route
@@ -68,10 +100,10 @@ function App() {
           }
         />
 
-        {/* Past Notes Page - PastHead is now INSIDE PastNotesPage */}
+        {/* Past Notes Page */}
         <Route
           path="/past-notes"
-          element={<PastNotesPage notes={notes} />}
+          element={<PastNotesPage notes={notes} onDeleteNote={deleteNote} />}
         />
       </Routes>
     </HashRouter>

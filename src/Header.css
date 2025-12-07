@@ -3,24 +3,27 @@
     margin-bottom: 1rem;
     display: flex; 
     align-items: center; 
-    justify-content: flex-start; 
+    justify-content: center; /* Changed to center */
     padding: 0 2rem; 
-    gap: 2rem; 
+    gap: 2rem;
+    position: relative; /* For absolute positioning of button */
 }
 
 .pastBtn {
-    align-self: flex-start; 
+    position: absolute; /* Position absolutely */
+    left: 2rem; /* Place on left side */
     background-color: white;
     border: 1px solid rgb(150, 112, 215);
     border-right: 2px solid rgb(150, 112, 215);
     text-decoration: none;
+    color: inherit; /* Ensure text color is visible */
     border-radius: 8px;
-    padding-inline: 12px;
-    padding-block: 8px;
+    padding: 8px 12px;
     font-size: 1.5rem;
     font-weight: 200;
     box-shadow: 0 0 5px rgba(215, 167, 245, 0.5);
-    margin: 0; 
+    margin: 0;
+    white-space: nowrap; /* Prevent text wrapping */
 }
 
 .pastBtn:hover {
@@ -31,7 +34,6 @@
 }
 
 .moodHead {
-    flex-grow: 1; 
     text-align: center; 
     margin: 0; 
     color: rgb(65, 51, 81);
@@ -44,14 +46,16 @@
     .header {
         flex-direction: column; 
         align-items: center; 
-        gap: 1rem; 
+        gap: 1rem;
+        padding: 0 1rem;
+        margin-top: 1.5rem;
     }
 
     .pastBtn {
+        position: static; /* Remove absolute positioning on mobile */
         align-self: center; 
-        font-size: 1.3rem;
-        padding-inline: 10px;
-        padding-block: 6px;
+        font-size: 1.2rem;
+        padding: 6px 10px;
     }
 
     .moodHead {
@@ -60,9 +64,14 @@
 }
 
 @media (max-width: 480px) {
+    .header {
+        margin-top: 1rem;
+        padding: 0 0.5rem;
+    }
+    
     .pastBtn {
         font-size: 1rem; 
-        margin: 0.5rem 0; 
+        padding: 6px 10px;
     }
 
     .moodHead {
