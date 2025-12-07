@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from './Header'; 
 import MoodDiaryPage from './MoodDiaryPage'; 
 import PastNotesPage from './PastNotesPage'; 
-import PastHead from './PastHead';
+// REMOVED: import PastHead from './PastHead'; (not needed anymore!)
 
 function App() {
   // Load notes from localStorage on initial render
@@ -68,15 +68,10 @@ function App() {
           }
         />
 
-        {/* Past Notes Page */}
+        {/* Past Notes Page - PastHead is now INSIDE PastNotesPage */}
         <Route
           path="/past-notes"
-          element={
-            <>
-              <PastHead />
-              <PastNotesPage notes={notes} />
-            </>
-          }
+          element={<PastNotesPage notes={notes} />}
         />
       </Routes>
     </HashRouter>

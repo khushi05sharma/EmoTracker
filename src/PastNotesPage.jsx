@@ -14,12 +14,20 @@ export default function PastNotesPage({ notes }) {
     : notes;
 
   return (
-    <div className={`box ${hoveredMood ? `mood-${hoveredMood}` : ''}`}>
-      <DateInput selectedDate={selectedDate} onDateChange={setSelectedDate} />
-      <NotesDisplay 
-        notes={filteredNotes} 
-        onMoodHover={setHoveredMood}
-      />
+    <div className={`page-wrapper ${hoveredMood ? `mood-${hoveredMood}` : ''}`}>
+      {/* Past Notes Header - THIS IS THE HEADER! */}
+      <header className="past-notes-header">
+        <h1>Past Notes</h1>
+      </header>
+
+      {/* Main content */}
+      <div className="content-wrapper">
+        <DateInput selectedDate={selectedDate} onDateChange={setSelectedDate} />
+        <NotesDisplay 
+          notes={filteredNotes} 
+          onMoodHover={setHoveredMood}
+        />
+      </div>
     </div>
   );
 }
