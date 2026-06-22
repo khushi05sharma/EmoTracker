@@ -5,6 +5,7 @@ import MoodDiaryPage from "./MoodDiaryPage";
 import PastNotesPage from "./PastNotesPage";
 import DarkModeToggle from "./DarkModeToggle";
 
+
 function App() {
   // Load notes from localStorage on initial render
   const [notes, setNotes] = useState(() => {
@@ -26,7 +27,6 @@ function App() {
       return [];
     }
   });
-
 
   // Dark mode state - load from localStorage
   const [isDarkMode, setIsDarkMode] = useState(() => {
@@ -52,6 +52,7 @@ function App() {
     }
   }, [notes]);
 
+  
 
   // Function to add a new note
   const addNote = (newNote) => {
