@@ -8,13 +8,15 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-      "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
+    "@google/generative-ai": "^0.24.1",
     "@mui/material": "^7.0.2",
+    "dotenv": "^17.4.2",
     "lucide-react": "^0.493.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",

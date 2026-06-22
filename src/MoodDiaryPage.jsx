@@ -67,6 +67,7 @@ const moodQuotes = {
   ],
 };
 
+
 // Get random quote function
 const getRandomQuote = (mood) => {
   const quotes = moodQuotes[mood] || moodQuotes.other;

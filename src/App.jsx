@@ -27,6 +27,7 @@ function App() {
     }
   });
 
+
   // Dark mode state - load from localStorage
   const [isDarkMode, setIsDarkMode] = useState(() => {
     const savedMode = localStorage.getItem("darkMode");
@@ -50,6 +51,7 @@ function App() {
       console.error(" Error saving notes to localStorage:", error);
     }
   }, [notes]);
+
 
   // Function to add a new note
   const addNote = (newNote) => {
