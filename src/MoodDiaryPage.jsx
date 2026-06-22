@@ -53,7 +53,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
   const [moodNote, setMoodNote] = useState("");
   const [emotion, setEmotion] = useState("");
   const [showCelebration, setShowCelebration] = useState(false);
-  const [celebrationQuote, setCelebrationQuote] = useState("");
+  const [celebrationInsight, setCelebrationInsight] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
 
   const currDate = new Date().toISOString().split("T")[0];
@@ -77,7 +77,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
         onSaveNote(newNote);
       }
 
-      setCelebrationQuote(aiInsight.encouragement);
+      setCelebrationInsight(aiInsight);
       setShowCelebration(true);
     } catch (error) {
       console.error("Failed to get AI insight:", error);
@@ -88,7 +88,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
 
   const handleCelebrationComplete = () => {
     setShowCelebration(false);
-    setCelebrationQuote("");
+    setCelebrationInsight(null);
   };
 
   return (
@@ -100,7 +100,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
 
       {showCelebration && (
         <QuoteCelebration
-          quote={celebrationQuote}
+          insight={celebrationInsight}
           mood={emotion}
           onComplete={handleCelebrationComplete}
         />
