@@ -2,6 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: flex-start;
   gap: 20px;
   margin-top: 4rem;
 }
@@ -143,6 +144,118 @@ body.dark-mode .delete-confirmation p {
   transform: scale(1.05);
 }
 
+/* AI Insight section on note cards */
+.ai-insight-section {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px dashed #ddd;
+}
+
+.insight-toggle-btn {
+  background: linear-gradient(135deg, #7e57c2, #5c6bc0);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 6px rgba(94, 53, 177, 0.3);
+}
+
+.insight-toggle-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(94, 53, 177, 0.4);
+}
+
+.insight-card-content {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  animation: insightCardFadeIn 0.35s ease;
+}
+
+@keyframes insightCardFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.insight-card-block {
+  background: #f3f0fa;
+  border-radius: 8px;
+  padding: 8px 10px;
+  border-left: 3px solid #7e57c2;
+}
+
+.insight-card-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #7e57c2;
+  margin-bottom: 3px;
+}
+
+.insight-card-block p {
+  font-size: 0.82rem;
+  color: #434343;
+  line-height: 1.4;
+  margin: 0;
+}
+
+.note-card.insight-open:hover {
+  transform: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode support */
+body.dark-mode .ai-insight-section {
+  border-top-color: #555;
+}
+
+body.dark-mode .insight-card-block {
+  background: rgba(126, 87, 194, 0.15);
+  border-left-color: #b39ddb;
+}
+
+body.dark-mode .insight-card-label {
+  color: #b39ddb;
+}
+
+body.dark-mode .insight-card-block p {
+  color: #ddd;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .insight-toggle-btn {
+    font-size: 0.72rem;
+    padding: 5px 12px;
+  }
+  .insight-card-block p {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .insight-card-content {
+    gap: 8px;
+  }
+  .insight-card-block {
+    padding: 7px 9px;
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .note-card {
@@ -171,5 +284,13 @@ body.dark-mode .delete-confirmation p {
   .note-card {
     width: 90%;
     max-width: 300px;
+  }
+}
+
+@media (hover: none) {
+  .note-card:hover {
+    transform: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: whitesmoke;
   }
 }
