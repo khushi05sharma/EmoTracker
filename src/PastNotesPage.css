@@ -65,15 +65,15 @@ body.dark-mode .page-wrapper.mood-other {
 
 /* Mood-based background gradients */
 .page-wrapper.mood-happy {
-    background: linear-gradient(135deg, #fff9c4, #ffeb3b, #fdd835) !important;
+    background: linear-gradient(135deg, #fff9c4, #fff59d, #cdbb6b) !important;
 }
 
 .page-wrapper.mood-sad {
-    background: linear-gradient(135deg, #b3d9ff, #64b5f6, #90caf9) !important;
+    background: linear-gradient(135deg, #b3d9ff, #a9d8ff, #87c5f7) !important;
 }
 
 .page-wrapper.mood-excited {
-    background: linear-gradient(135deg, #ffccbc, #ff7043, #ff5722) !important;
+    background: linear-gradient(135deg, #f7e9c7, #ffdbabde, #ffe389a3) !important;
 }
 
 .page-wrapper.mood-bored {
@@ -81,11 +81,11 @@ body.dark-mode .page-wrapper.mood-other {
 }
 
 .page-wrapper.mood-confused {
-    background: linear-gradient(135deg, #e1bee7, #ba68c8, #ab47bc) !important;
+    background: linear-gradient(135deg, #e1bee7, #ecaef6, #e3a0ef) !important;
 }
 
 .page-wrapper.mood-other {
-    background: linear-gradient(135deg, #c5e1a5, #aed581, #9ccc65) !important;
+    background: linear-gradient(135deg, #c5e1a5, #cdf0a6, #cef89e) !important;
 }
 
 /* Responsive */
