@@ -69,13 +69,31 @@ export default function MoodDiaryPage({ onSaveNote }) {
   const [celebrationInsight, setCelebrationInsight] = useState(null);
   // for tracking the gemini response
   const [isLoading, setIsLoading] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const currDate = new Date().toISOString().split("T")[0];
+
+  useEffect(() => {
+    if (errorMessage) {
+      const timer = setTimeout(() => setErrorMessage(""), 5000);
+      // cancel the timer if errorMessage changes again
+      // before the 5 seconds finish (prevents bugs from overlapping timers)
+      return () => clearTimeout(timer);
+    }
+  }, [errorMessage]);
 
   const handleSave = async (note, selectedEmotion) => {
     setMoodNote(note);
     setEmotion(selectedEmotion);
     setIsLoading(true);
+    setErrorMessage(""); // clear previous error when starting a new save
+
+    // building the note this part never depends on gemini
+    let newNote = {
+      date: currDate,
+      mood: selectedEmotion,
+      text: note,
+    };
 
     try {
       // for sending user mood and journal entry to gemini
@@ -92,12 +110,19 @@ export default function MoodDiaryPage({ onSaveNote }) {
         onSaveNote(newNote);
       }
 
-      // will display AI-generated quotes popup
+      // will display AI-generated quotes popup only if we actually got an insight
       setCelebrationInsight(aiInsight);
       setShowCelebration(true);
     } catch (error) {
       console.error("Failed to get AI insight:", error);
+      setErrorMessage(
+        "Couldn't get an AI insight this time, but your note was saved!",
+      );
     } finally {
+      // always runs - whether AI succeeded or failed, the note gets saved
+      if (onSaveNote) {
+        onSaveNote(newNote);
+      }
       setIsLoading(false);
     }
   };
@@ -111,6 +136,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
     <>
       <main className="moodDiaryPage">
         <MoodForm onSave={handleSave} isLoading={isLoading} />
+        {errorMessage && <p className="ai-error-message">{errorMessage}</p>}
         <TodayNote date={currDate} note={moodNote} emotion={emotion} />
       </main>
 
