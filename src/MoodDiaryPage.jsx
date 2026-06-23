@@ -10,39 +10,51 @@ function QuoteCelebration({ insight, mood, onComplete }) {
 
   useEffect(() => {
     setIsVisible(true);
-    const timer = setTimeout(() => {
-      setIsVisible(false);
-      setTimeout(() => {
-        onComplete();
-      }, 500);
-    }, 6000);
-    return () => clearTimeout(timer);
-  }, [onComplete]);
+  }, []);
+
+  if (!insight) return null;
+
+  const handleClose = () => {
+    setIsVisible(false);
+    setTimeout(() => {
+      onComplete();
+    }, 500);
+  };
 
   if (!insight) return null;
 
   return (
     <div className={`celebration-overlay ${isVisible ? "visible" : ""}`}>
       <div className={`celebration-content mood-${mood}`}>
+        <button
+          className="celebration-close-btn"
+          onClick={handleClose}
+          aria-label="Close"
+        >
+          ×
+        </button>
+
         <div className="particles">
           {[...Array(20)].map((_, i) => (
             <div key={i} className={`particle particle-${i + 1}`}></div>
           ))}
         </div>
 
-        <div className="insight-block">
-          <p className="insight-label">Encouragement</p>
-          <p className="insight-text">{insight.encouragement}</p>
-        </div>
+        <div className="insight-container">
+          <div className="insight-block">
+            <p className="insight-label">Encouragement</p>
+            <p className="insight-text">{insight.encouragement}</p>
+          </div>
 
-        <div className="insight-block">
-          <p className="insight-label">Reflection</p>
-          <p className="insight-text">{insight.reflection}</p>
-        </div>
+          <div className="insight-block">
+            <p className="insight-label">Reflection</p>
+            <p className="insight-text">{insight.reflection}</p>
+          </div>
 
-        <div className="insight-block">
-          <p className="insight-label">For Tomorrow</p>
-          <p className="insight-text">{insight.suggestion}</p>
+          <div className="insight-block">
+            <p className="insight-label">For Tomorrow</p>
+            <p className="insight-text">{insight.suggestion}</p>
+          </div>
         </div>
       </div>
     </div>
@@ -53,7 +65,9 @@ export default function MoodDiaryPage({ onSaveNote }) {
   const [moodNote, setMoodNote] = useState("");
   const [emotion, setEmotion] = useState("");
   const [showCelebration, setShowCelebration] = useState(false);
+  // will stores AI-generated response
   const [celebrationInsight, setCelebrationInsight] = useState(null);
+  // for tracking the gemini response
   const [isLoading, setIsLoading] = useState(false);
 
   const currDate = new Date().toISOString().split("T")[0];
@@ -64,6 +78,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
     setIsLoading(true);
 
     try {
+      // for sending user mood and journal entry to gemini
       const aiInsight = await getAIInsight(selectedEmotion, note);
 
       const newNote = {
@@ -77,6 +92,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
         onSaveNote(newNote);
       }
 
+      // will display AI-generated quotes popup
       setCelebrationInsight(aiInsight);
       setShowCelebration(true);
     } catch (error) {
@@ -94,7 +110,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
   return (
     <>
       <main className="moodDiaryPage">
-        <MoodForm onSave={handleSave} />
+        <MoodForm onSave={handleSave} isLoading={isLoading} />
         <TodayNote date={currDate} note={moodNote} emotion={emotion} />
       </main>
 
