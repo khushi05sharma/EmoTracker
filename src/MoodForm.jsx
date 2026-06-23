@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "./MoodForm.css";
 
-export default function MoodForm({ onSave }) {
+export default function MoodForm({ onSave, isLoading }) {
   const [moodNote, setMoodNote] = useState("");
   const [emotion, setEmotion] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (moodNote && emotion) {
+    // only allow submit if we have both fields AND we're not already loading
+    if (moodNote && emotion && !isLoading) {
       console.log("Mood Note: ", moodNote);
       console.log("Selected Emotion: ", emotion);
       onSave(moodNote, emotion);
+      // clear form for next entry
       setMoodNote("");
       setEmotion("");
     }
@@ -24,6 +26,8 @@ export default function MoodForm({ onSave }) {
         placeholder="Write a note about your mood today..."
         onChange={(e) => setMoodNote(e.target.value)}
         aria-label="Mood note"
+        // using to disable text area while loading to prevent editing mid saving
+        disabled={isLoading}
         required
       ></textarea>
 
@@ -32,6 +36,7 @@ export default function MoodForm({ onSave }) {
         value={emotion}
         aria-label="Select emotion"
         onChange={(e) => setEmotion(e.target.value)}
+        disabled={isLoading}
         required
       >
         <option value="">Select Emotion</option>
@@ -43,8 +48,17 @@ export default function MoodForm({ onSave }) {
         <option value="other">🤔 Other</option>
       </select>
 
-      <button type="submit" className="saveBtn">
-        Save
+      <button
+        type="submit"
+        className="saveBtn"
+        // disable button while waiting for Gemini to respond
+        disabled={isLoading}
+        style={{
+          opacity: isLoading ? 0.6 : 1,
+          cursor: isLoading ? "not-allowed" : "pointer",
+        }}
+      >
+        {isLoading ? "Getting AI Insight..." : "Save"}
       </button>
     </form>
   );
