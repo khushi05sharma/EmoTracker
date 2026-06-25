@@ -1,9 +1,6 @@
 <h1 align="center">🌸 EmoTracker</h1>
 
-<p align="center">
-  A minimal, cute, and soothing mood-tracking app built with <strong>React</strong> and <strong>Vite</strong>.  
-  EmoTracker helps you express your emotions, journal your day, and reflect on how you feel — one entry at a time.
-</p>
+<p align="center"> A minimal, calming mood-tracking app built with <strong>React</strong>, <strong>Express</strong>, and <strong>Google Gemini AI</strong>. EmoTracker helps users journal their emotions, receive thoughtful AI-powered reflections, and revisit past entries in a clean, soothing interface. </p>
 
 <p align="center">
   <a href="https://khushi05sharma.github.io/EmoTracker/" target="_blank"><strong>🌐 Live Demo</strong></a> •
@@ -15,11 +12,14 @@
 
 ## 🧠 About EmoTracker
 
-**EmoTracker** is a web-based mood diary where users can:
-- ✍️ Write a short note about how they feel today
-- 😊 Select an emotion that matches their mood
-- 📅 View all past mood entries on a separate notes page
-- 💖 Enjoy a soft pastel, emotion-focused UI that feels calm and friendly
+**EmoTracker** is a personal mood journal that combines traditional journaling with AI-powered emotional support.
+Users can:
+
+- ✍️ Write about how they're feeling
+- 😊 Choose the emotion that best matches their mood
+- 🤖 Receive a personalized AI reflection powered by Google Gemini
+- 💾 Save journal entries and AI insights locally using browser localStorage
+- 📅 Browse previous entries anytime through the Past Notes page
 
 It’s designed to be a personal space for emotional journaling and mood reflection.
 
@@ -27,12 +27,15 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 
 ## ✨ Features
 
-- 📝 Add notes with selected mood and date
-- 🎭 Emotion options with emoji labels
-- 📆 Past Notes section to reflect on emotional history
-- 🌈 Aesthetic, calming design
-- 🔗 Deployed using GitHub Pages with hash-based routing support
-- 📱 Responsive design for all devices
+- 📝 Daily mood journaling with Emotion selection
+- 🤖 AI-generated encouragement, reflection, and tomorrow's suggestion
+- 💾 AI insights saved alongside journal entries in localhost
+- 💌 Expandable AI notes inside Past Notes
+- 📆 Browse previous journal entries
+- 🌈 Soft pastel responsive UI
+- 🔒 Secure Express backend protecting the Gemini API key
+- ⚡ Rate limiting to help prevent API abuse
+- 📱 Responsive across desktop, tablet, and mobile
 
 ---
 
@@ -45,38 +48,45 @@ It’s designed to be a personal space for emotional journaling and mood reflect
 
 ## 🛠 Tech Stack
 
-| Tech             | Description                            |
-|------------------|----------------------------------------|
-| React            | Component-based frontend framework     |
-| Vite             | Fast bundler and dev server            |
-| React Router DOM | For navigation (with HashRouter)       |
-| GitHub Pages     | Hosting & deployment                   |
-| CSS              | Custom styling for UI/UX               |
+| Tech              | Description                        |
+| ----------------- | ---------------------------------- |
+| React             | Component-based frontend framework |
+| Vite              | Development & Build Tool           |
+| React Router DOM  | Routing (HashRouter)               |
+| Express.js        | Backend API                        |
+| Google Gemini API | AI-generated insights              |
+| Render            | Backend deployment                 |
+| GitHub Pages      | Frontend deployment                |
+| CSS               | Custom styling for UI/UX           |
 
 ---
 
 ## 📸 Screenshots
 
 ### 🌼 Home Page
+
 <p align="center">
-  <img src="./screenshots/mainpage.jpeg" alt="Home Page" width="80%">
+  <img src="./screenshots/homepage.png" alt="Home Page" width="80%">
 </p>
 
 ### 🗂 Past Notes Page
+
 <p align="center">
-  <img src="./screenshots/pastpage.jpeg" alt="Past Notes Page" width="80%">
+  <img src="./screenshots/pastpage.png" alt="Past Notes Page" width="80%">
 </p>
 
 ---
 
 ## 🙋‍♀️ About Me
+
 **Khushi Sharma**
-Frontend Developer 💻 | UI/UX Enthusiast 🎨 | Aesthetic Thinker ✨ |
-🔗 [GitHub](https://github.com/khushi05sharma)  
+MERN Stack Developer 💻 | UI/UX Enthusiast 🎨 |
+🔗 [GitHub](https://github.com/khushi05sharma)
 
 ---
 
 ## 📜 License
+
 This project is licensed under the MIT License.
 Feel free to use, modify, and share it with proper credit. ✨
 
@@ -92,3 +102,4 @@ cd EmoTracker
 npm install
 npm run dev
 
+```
