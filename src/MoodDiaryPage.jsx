@@ -99,16 +99,7 @@ export default function MoodDiaryPage({ onSaveNote }) {
       // for sending user mood and journal entry to gemini
       const aiInsight = await getAIInsight(selectedEmotion, note);
 
-      const newNote = {
-        date: currDate,
-        mood: selectedEmotion,
-        text: note,
-        aiInsight: aiInsight,
-      };
-
-      if (onSaveNote) {
-        onSaveNote(newNote);
-      }
+      newNote.aiInsight = aiInsight;
 
       // will display AI-generated quotes popup only if we actually got an insight
       setCelebrationInsight(aiInsight);
