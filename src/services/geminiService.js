@@ -12,16 +12,8 @@ export async function getAIInsight(emotion, journalText) {
     },
   );
 
-  // if (!response.ok) {
-  //   throw new Error("Backend request failed");
-  // }
-
   if (!response.ok) {
-    const errorData = await response.json();
-
-    console.error("Backend Error:", errorData);
-
-    throw new Error(errorData.error || "Backend request failed");
+    throw new Error("Backend request failed");
   }
 
   // parse the JSON response body into a real JS object
